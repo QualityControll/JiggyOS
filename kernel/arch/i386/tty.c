@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include <kernel/vga.h>
+#include <kernel/phys_virt.h>
 
 size_t terminal_row;
 size_t terminal_column;
@@ -15,7 +16,7 @@ void terminal_initialize(void)
 	terminal_row = 0;
 	terminal_column = 0;
 	terminal_color = make_color(COLOR_LIGHT_GREY, COLOR_BLACK);
-	terminal_buffer = VGA_MEMORY;
+	terminal_buffer = (uint16_t *)(VIRT(VGA_MEMORY));
 	for ( size_t y = 0; y < VGA_HEIGHT; y++ )
 	{
 		for ( size_t x = 0; x < VGA_WIDTH; x++ )
