@@ -40,6 +40,34 @@ void terminal_putentryat(char c, uint8_t color, size_t x, size_t y)
 
 void terminal_putchar(char c)
 {
+    if (c == '\0') {
+        return;
+    }
+
+    if (c == '\n') {
+        if (  ++terminal_row == VGA_HEIGHT ) 
+        {
+            terminal_row = 0;
+            terminal_column = 0;
+        }
+        else {
+            terminal_column = 0;
+        }
+        return;
+    }
+
+    if (c == '\t') {
+        if ( terminal_column+3 >= VGA_WIDTH ) 
+        {
+            return;
+        }
+        else 
+        {
+            terminal_column += 3;
+        }
+        return;
+    }
+
 	terminal_putentryat(c, terminal_color, terminal_column, terminal_row);
 	if ( ++terminal_column == VGA_WIDTH )
 	{

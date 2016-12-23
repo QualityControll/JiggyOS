@@ -10,6 +10,8 @@ extern "C" {
 int printf(const char* __restrict, ...);
 int putchar(int);
 int puts(const char*);
+int sprintf(char * s, const char* __restrict, ...);
+
 
 #ifdef __cplusplus
 }
