@@ -1,4 +1,3 @@
-LOG_LEVEL:=5
 
 HOST?=$(shell ../default-host.sh)
 HOSTARCH:=$(shell ../target-triplet-to-arch.sh $(HOST))

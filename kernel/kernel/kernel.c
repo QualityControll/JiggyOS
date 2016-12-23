@@ -9,12 +9,10 @@
 void kernel_main(void)
 {
 	terminal_initialize();
-	LOG_INFO("Hello, kernel World!\n");
-    char buff[20] = {'\0'};
-    char *name = "chris";
-    int date = 1026;
-    char letter = 'd';
-    sprintf(buff, "%s/%d/%c", name, date, letter);
-    printf("%s", buff);
+    for (int i = 0; i < 100; i++) {
+        LOG_INFO("Hello, kernel World! - %d\n", i);
+    }
+
+
     while(1);
 }

@@ -35,9 +35,14 @@ static inline uint16_t make_vgaentry(char c, uint8_t color)
 	return c16 | color16 << 8;
 }
 
-static const size_t VGA_WIDTH = 80;
-static const size_t VGA_HEIGHT = 25;
+
+
+void terminal_writestring(const char *data);
+
+#define VGA_WIDTH 80
+#define VGA_HEIGHT 25
+#define NUM_SCREENS 20
+
 
 #define VGA_MEMORY 0xB8000
-
 #endif

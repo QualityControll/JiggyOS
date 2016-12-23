@@ -7,7 +7,8 @@
 
 #include "kernel/tty.h"
 
-
+//TODO: why doesn't the LOG_LEVEL environment variable in config.sh work?
+#define LOG_LEVEL 5
 
 #define LOG_LEVEL_FATAL 1
 #define LOG_LEVEL_ERROR 2
